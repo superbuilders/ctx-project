@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* ─── Base theme ──────────────────────────────────────────── */
+@theme {
+  --color-ctx-bg: #0a0a0b;
+  --color-ctx-surface: #141416;
+  --color-ctx-surface-hover: #1a1a1e;
+  --color-ctx-border: #27272a;
+  --color-ctx-text: #fafafa;
+  --color-ctx-text-muted: #a1a1aa;
+  --color-ctx-accent: #3b82f6;
+  --color-ctx-accent-hover: #2563eb;
+  --color-ctx-success: #22c55e;
+  --color-ctx-warning: #eab308;
+  --color-ctx-error: #ef4444;
+
+  --font-mono: "Berkeley Mono", "SF Mono", "Fira Code", "Fira Mono", ui-monospace, monospace;
+}
+
+/* ─── Global styles ───────────────────────────────────────── */
+body {
+  @apply bg-ctx-bg text-ctx-text antialiased;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-ctx-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ctx-text-muted;
+}
+
+/* ─── Markdown content ────────────────────────────────────── */
+.prose-ctx {
+  @apply text-ctx-text leading-relaxed;
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-ctx-text mt-6 mb-3;
+  }
+  h1 { @apply text-2xl; }
+  h2 { @apply text-xl; }
+  h3 { @apply text-lg; }
+
+  p { @apply mb-4; }
+
+  a {
+    @apply text-ctx-accent hover:text-ctx-accent-hover underline;
+  }
+
+  code {
+    @apply bg-ctx-surface px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  pre {
+    @apply bg-ctx-surface border border-ctx-border rounded-lg p-4 overflow-x-auto mb-4;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+  }
+
+  ul, ol {
+    @apply mb-4 pl-6;
+  }
+  ul { @apply list-disc; }
+  ol { @apply list-decimal; }
+  li { @apply mb-1; }
+
+  blockquote {
+    @apply border-l-2 border-ctx-accent pl-4 italic text-ctx-text-muted mb-4;
+  }
+
+  hr {
+    @apply border-ctx-border my-6;
+  }
+
+  table {
+    @apply w-full border-collapse mb-4;
+  }
+  th, td {
+    @apply border border-ctx-border px-3 py-2 text-left;
+  }
+  th {
+    @apply bg-ctx-surface font-medium;
+  }
+
+  img {
+    @apply rounded-lg max-w-full;
+  }
+}

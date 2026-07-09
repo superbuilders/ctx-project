@@ -1,0 +1,13 @@
+{
+  "name": "ctx",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Unix-native context layer for AI-augmented teams",
+  "license": "MIT",
+  "scripts": {
+    "dev": "sst dev",
+    "deploy": "sst deploy --stage production",
+    "remove": "sst remove",
+    "deploy:web": "./scripts/deploy-web.sh"
+  }
+}

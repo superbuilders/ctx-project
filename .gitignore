@@ -1,0 +1,30 @@
+# SST
+.sst/
+.sst.config.*.mjs
+
+# Dependencies
+node_modules/
+
+# Next.js
+packages/web/.next/
+packages/web/out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build
+dist/
+build/
